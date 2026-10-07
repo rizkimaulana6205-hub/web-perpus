@@ -1,0 +1,86 @@
+/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 */
+/* Hallmark · genre: editorial · macrostructure: Workbench · theme: Atelier-Archival · enrichment: A · nav: N1b · footer: Ft1 */
+
+@import 'tailwindcss';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@theme {
+    --font-sans:
+        'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-serif:
+        'Newsreader', 'Georgia', 'Cambria', 'Times New Roman', serif;
+    --font-mono:
+        'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+:root {
+    --color-paper: #faf8f5;
+    --color-paper-card: #ffffff;
+    --color-paper-subtle: #f3efe6;
+    --color-paper-muted: #e9e4d6;
+    --color-border: #ded7c6;
+    --color-border-subtle: #ebe6d8;
+    --color-ink: #191816;
+    --color-ink-muted: #646055;
+    --color-ink-subtle: #8e897d;
+    --color-accent: #164e3b;
+    --color-accent-hover: #0f392b;
+    --color-accent-subtle: #e8f3ee;
+    --color-amber: #b45309;
+    --color-amber-subtle: #fef3c7;
+    --color-crimson: #991b1b;
+    --color-crimson-subtle: #fee2e2;
+    --color-focus: #0f766e;
+}
+
+html, body {
+    overflow-x: clip;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Typography purity: headings are upright roman */
+h1, h2, h3, h4, h5, h6 {
+    font-style: normal !important;
+}
+
+/* Barcode visual lines simulation */
+.barcode-strip {
+    background-image: repeating-linear-gradient(
+        90deg,
+        #191816 0px,
+        #191816 2px,
+        transparent 2px,
+        transparent 4px,
+        #191816 4px,
+        #191816 7px,
+        transparent 7px,
+        transparent 9px,
+        #191816 9px,
+        #191816 10px,
+        transparent 10px,
+        transparent 13px
+    );
+}
+
+/* Print utilities for official documents & labels */
+@media print {
+    body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+    .no-print {
+        display: none !important;
+    }
+    .print-only {
+        display: block !important;
+    }
+    .page-break {
+        page-break-after: always;
+        break-after: page;
+    }
+}
